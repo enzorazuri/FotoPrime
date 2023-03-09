@@ -489,16 +489,11 @@ footer .footer-main-content .ubicacion-contacto ul li {
   #main-banner .content-banner h1 {
     font-size: 2rem;
   }
-  #main-banner .content-banner span {
-    display: block;
-    font-size: 1.5rem;
-    color: white;
-    white-space: nowrap;
-    border-right: 3px solid;
-    width: 24.9rem;
-    min-height: 1.5rem;
-    animation: typing 2s steps(28), blink 0.5s infinite step-end alternate;
-    overflow: hidden;
+  #main-banner {
+    background-attachment: local;
+  }
+  #packs {
+    background-attachment: local;
   }
 }
 @media only screen and (max-width: 530px) {
