@@ -492,6 +492,9 @@ footer .footer-main-content .ubicacion-contacto ul li {
   #main-banner {
     background-attachment: local;
   }
+  #main-banner .content-banner span {
+    font-size: 1.5rem;
+  }
   #packs {
     background-attachment: local;
   }
