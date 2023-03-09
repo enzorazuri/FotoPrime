@@ -1,0 +1,650 @@
+@use "fonts";
+
+//COLORES
+$primary-color: #00a8e1;
+$secundary-color: #ff9900;
+$bg-color2: #fcfefe;
+$bg-color: #92effd;
+$bg-color-services: #f5f5f5;
+$color-letra-headers: #00bcd4;
+
+//FUENTES
+$font-material-symbols: "MaterialSymbolsOutlined";
+$font-main: "Signika", "sans-serif", "Arial";
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  
+  font-family: $font-main;
+  font-weight: bold;
+
+
+  &.main-grid {
+    display: grid;
+  }
+}
+
+//ANIMACION PARA FONDO
+//USADA EN HEADER Y BODY
+@keyframes background-move {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+/*
+********
+CABECERA
+********
+*/
+
+.header-principal {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  width: 100%;
+  position: absolute;
+  animation: background-move 10s ease-in infinite;
+  background-size: 400% 400%;
+
+  //LOGO
+  .logo {
+    max-width: 400px;
+    margin-left: 0.5rem;
+    padding: 1.5rem;
+  }
+
+  //MENU DE NAVEGACION
+
+  nav {
+    display: none;
+    align-content: center;
+    justify-content: center;
+    flex-grow: 1;
+
+    .menu {
+      display: flex;
+      flex-flow: row wrap;
+      align-content: center;
+      justify-content: flex-end;
+      flex-grow: 1;
+      padding: 1rem;
+      //border: 2px solid red;
+      gap: 2rem;
+
+      .menu-item {
+        font-size: 1.5rem;
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: $primary-color;
+        letter-spacing: 1.5px;
+
+        &:last-child {
+          margin-right: 0.5rem;
+        }
+
+        a {
+          color: white;
+          display: block;
+          transition: all 300ms;
+
+          &:hover {
+            color: #ff9900;
+            transform: scale(1.1, 1.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+//LOGO
+.logo {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+  }
+}
+
+/*
+****************
+BANNER PRINCIPAL
+****************
+*/
+
+#main-banner {
+  display: grid;
+  place-content: center;
+
+  //FONDO DEL BANNER
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+    url(../img/bg/bg-pareja-atrezzo.jpg);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  min-height: 100vh;
+  background-attachment: fixed;
+
+  //CONTENIDO DEL BANNER
+  .content-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+
+    //TITULO DEL BANNER
+    h1 {
+      display: block;
+      font-size: 3rem;
+      font-weight: bolder;
+      color: white;
+      animation: aparece-titulo 3.5s;
+    }
+
+    //DESCRIPCION DEL BANNER
+    span {
+      display: block;
+      font-size: 2rem;
+      color: white;
+      white-space: nowrap;
+      border-right: 3px solid;
+      width: 33.2rem;
+      min-height: 2.5rem;
+
+      animation: typing 2s steps(28), blink 0.5s infinite step-end alternate;
+
+      overflow: hidden;
+    }
+  }
+}
+
+//ANIMACION PARA QUE APAREZCA EL TITULO DEL BANNER
+
+@keyframes aparece-titulo {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+//ANIMACION MECANOGRAFIA DESCRIPCION BANNER
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+//ANIMACION MOVIMIENTO BANNER PRINCICPAL
+
+@keyframes movimiento {
+  from {
+    background-position: center 35%;
+  }
+
+  to {
+    background-position: bottom;
+  }
+}
+
+/*
+******************
+NUESTROS SERVICIOS
+******************
+*/
+
+.services {
+  //border: 5px solid red;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+  box-shadow: 0 0 15px #ddd;
+
+  //GRID DE TARJETAS SERVICIOS
+  .content-services {
+    //border: 2px solid green;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 120px;
+
+    .servicesBx {
+      padding: 40px 20px;
+      max-width: 500px;
+      //border: 2px solid blue;
+      text-align: center;
+      transition: 0.5s;
+      background: $bg-color-services;
+      overflow: hidden;
+
+      img {
+        max-width: 160px;
+      }
+
+      h2 {
+        margin-top: 1.5rem;
+        font-size: 1.8rem;
+        font-weight: bold;
+        transition: 0.5s;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      p {
+        font-size: 1.6rem;
+        margin: 20px;
+        transition: all 60s;
+        font-weight: 500;
+        text-align: center;
+        line-height: 35px;
+      }
+
+      &:hover img {
+        animation: showIcon 500ms linear;
+      }
+
+      &:hover h2 {
+        animation: showCategory 500ms linear;
+      }
+    }
+  }
+}
+
+//ANIMACION PARA ENSEÑAR EL ICONO CAYENDO DESDE ARRIBA
+@keyframes showIcon {
+  from {
+    transform: translateY(-200%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+//ANIMACION PARA ENSEÑAR EL SERVICIO DESDE ARRIBA
+@keyframes showCategory {
+  from {
+    transform: translateY(-100%);
+    color: black;
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+//ANIMACION PARA MOSTRAR LA DESCRIPCION DEL SERVICIO DESDE LA IZQ
+@keyframes showDescription {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+//CLASE PARA TITULOS PRINCIPALES H2 CON LINEA NEGRA DEBAJO
+.main-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h2 {
+    position: relative;
+    display: block;
+    font-size: 2.3rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+      width: 60px;
+      height: 4px;
+      background: $secundary-color;
+    }
+  }
+}
+
+//CLASE PARA EL PRIMARY COLOR
+.primary-color {
+  color: $primary-color;
+}
+
+/*
+*********************
+CONOCE NUESTROS PACKS
+*********************
+*/
+
+#packs {
+  padding: 5rem;
+  text-align: center;
+  //border-top: 1px solid $bg-color-services;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+    url(../img/bg/bg-atrezzo.jpg);
+  background-size: 100%;
+  backdrop-filter: blur(10px);
+  background-attachment: fixed;
+  
+
+  .main-title {
+    color: white;
+    margin-bottom: 4rem;
+
+  }
+
+  .prices-packs {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+
+    .card-prices-packs {
+      padding: 1.7rem;
+      position: relative;
+      min-width: 340px;
+      background: white;
+      overflow: hidden;
+
+      ul {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 40px 20px;
+
+        li {
+          font-weight: 500;
+        }
+      }
+
+      h3 {
+        margin-bottom: 0.5rem;
+        font-size: 2.5rem;
+        transition: 0.5s;
+        text-align: center;
+      }
+
+      h4 {
+        font-family: "Lora", "sans serif";
+        color: rgba(42, 128, 42, 0.76);
+      }
+    }
+  }
+}
+
+//PREMIUM PACK
+#premium-pack {
+  border-top: 1px solid $secundary-color;
+  border-left: 1px solid $secundary-color;
+  box-shadow: 15px 15px 50px #ff990070;
+
+  h3 {
+    color: $secundary-color;
+  }
+}
+
+//ESTANDAR PACK
+#standard-pack {
+  border-top: 1px solid #a38974;
+  border-left: 1px solid #a38974;
+  box-shadow: 15px 15px 50px #a38974;
+
+  h3 {
+    color: #a38974;
+  }
+}
+
+//SOBRE NOSOTROS - ULTIMO BLOQUE
+
+#Sobre-Nosotros {
+  margin-top: 3rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+
+  .main-title {
+    h2 {
+      color: $primary-color;
+    }
+  }
+
+  .descripcion-parrafo {
+    width: 50%;
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2.5rem;
+    text-align: center;
+    padding: 1rem;
+
+    .oferta-contacto {
+      margin-top: 3rem;
+      border: 2px dashed;
+      font-weight: 600;
+      line-height: 1.5em;
+      font-size: 0.8em;
+      padding: 1em;
+    }
+  }
+}
+
+//FOOTER
+
+footer {
+  margin-top: 3rem;
+  width: 100%;
+  color: white;
+
+  div {
+    padding: 1rem;
+
+    h3 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-bottom: 2px solid #171616;
+      position: relative;
+      color: white;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        width: 55px;
+        height: 2px;
+        background: $secundary-color;
+        z-index: 1;
+      }
+    }
+  }
+
+  .footer-main-content {
+    display: grid;
+    grid-template:
+      "sobre-nosotros logo contacto" auto /
+      1fr 1fr 1fr;
+
+    gap: 10px;
+    background: #171616;
+
+    .nosotros {
+      grid-area: sobre-nosotros;
+
+      p {
+        font-size: 1.2rem;
+        font-weight: normal;
+        line-height: 2rem;
+      }
+
+      ul {
+        display: flex;
+        flex-flow: row wrap;
+        margin-top: 10px;
+        gap: 20px;
+      }
+    }
+
+    //LOGO
+    .logo {
+      grid-area: logo;
+
+      img {
+        object-fit: contain;
+        max-width: 500px;
+      }
+    }
+
+    .ubicacion-contacto {
+      // border: 2px solid orange;
+      grid-area: contacto;
+
+      ul {
+        //border: 2px solid white;
+        display: grid;
+        grid-template-columns: repeat(2, 2rem);
+        grid-template-rows: repeat(3, 1fr);
+
+        li {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+.font-material-symbols {
+  font-family: $font-material-symbols;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+//MEDIA QUERIES
+
+/* Medium devices */
+@media only screen and (max-width: 1097px) {
+
+
+  .header-principal {
+    nav {
+      display: none;
+    }
+  }
+
+  #main-banner {
+    background-position: center;
+
+  }
+
+  .services {
+    //GRID DE TARJETAS SERVICIOS
+    .content-services {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  #Sobre-Nosotros .descripcion-parrafo {
+    width: 80%;
+
+  }
+
+  footer .footer-main-content {
+
+    grid-template:
+      "contacto sobre-nosotros" 1fr 
+      "contacto logo" auto/
+      1fr 1fr;
+  }
+
+
+}
+
+/* Small devices */
+@media only screen and (max-width: 768px) {
+  
+  footer .footer-main-content {
+
+
+    grid-template:
+      "contacto sobre-nosotros" 1fr
+      "logo sobre-nosotros" 1fr/
+      1fr 1fr;
+  }
+
+  #main-banner .content-banner h1 {
+    font-size: 2rem;
+
+  }
+
+  #main-banner .content-banner span {
+    display: block;
+    font-size: 1.5rem;
+    color: white;
+    white-space: nowrap;
+    border-right: 3px solid;
+    width: 24.9rem;
+    min-height: 1.5rem;
+    animation: typing 2s steps(28), blink 0.5s infinite step-end alternate;
+    overflow: hidden;
+  }
+
+
+  
+}
+
+@media only screen and (max-width: 530px) {
+
+#packs .main-title h2{
+    font-size: 2rem;
+}
+#Sobre-Nosotros .main-title h2 {
+  font-size: 2rem;
+}
+
+#Sobre-Nosotros .descripcion-parrafo {
+  width: 90%;
+
+}
+
+}

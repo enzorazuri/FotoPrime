@@ -1,0 +1,434 @@
+/*Fuentes*/
+@font-face {
+  font-family: "Signika";
+  src: url(fonts/Signika-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Signika";
+  src: url(fonts/Signika-Light.ttf);
+  font-weight: lighter;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Signika";
+  src: url(fonts/Signika-Medium.ttf);
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Signika";
+  src: url(fonts/Signika-Regular.ttf);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Signika";
+  src: url(fonts/Signika-SemiBold.ttf);
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MaterialSymbolsOutlined";
+  src: url("fonts/MaterialSymbolsOutlined.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Signika", "sans-serif", "Arial";
+  font-weight: bold;
+}
+body.main-grid {
+  display: grid;
+}
+
+@keyframes background-move {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+.header-principal {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  width: 100%;
+  position: absolute;
+  animation: background-move 10s ease-in infinite;
+  background-size: 400% 400%;
+}
+.header-principal .logo {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  max-width: 400px;
+  margin-left: 0.5rem;
+  padding: 1.5rem;
+}
+.header-principal .logo img {
+  width: 100%;
+}
+.header-principal nav {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+.header-principal nav .menu {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  padding: 1rem;
+  gap: 2rem;
+}
+.header-principal nav .menu .menu-item {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: #00a8e1;
+  letter-spacing: 1.5px;
+}
+.header-principal nav .menu .menu-item:last-child {
+  margin-right: 0.5rem;
+}
+.header-principal nav .menu .menu-item a {
+  color: white;
+  display: block;
+  transition: all 300ms;
+}
+.header-principal nav .menu .menu-item a:hover {
+  color: #ff9900;
+  transform: scale(1.1, 1.1);
+}
+
+#main-banner {
+  display: grid;
+  place-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(../img/bg/bg-pareja-atrezzo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+#main-banner .content-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+#main-banner .content-banner h1 {
+  display: block;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: white;
+  animation: aparece-titulo 3.5s;
+}
+#main-banner .content-banner span {
+  display: block;
+  font-size: 2rem;
+  color: white;
+  white-space: nowrap;
+  border-right: 3px solid;
+  width: 33.4rem;
+  min-height: 2.5rem;
+  animation: typing 2s steps(28), blink 0.5s infinite step-end alternate;
+  overflow: hidden;
+}
+
+@keyframes aparece-titulo {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes movimiento {
+  from {
+    background-position: center 35%;
+  }
+  to {
+    background-position: bottom;
+  }
+}
+.services {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+  box-shadow: 0 0 15px #ddd;
+}
+.services .content-services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 120px;
+}
+.services .content-services .servicesBx {
+  padding: 40px 20px;
+  max-width: 500px;
+  text-align: center;
+  transition: 0.5s;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+.services .content-services .servicesBx img {
+  max-width: 160px;
+}
+.services .content-services .servicesBx h2 {
+  margin-top: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: 0.5s;
+  text-transform: uppercase;
+  text-align: center;
+}
+.services .content-services .servicesBx p {
+  font-size: 1.6rem;
+  margin: 20px;
+  transition: all 60s;
+  font-weight: 500;
+  text-align: center;
+  line-height: 35px;
+}
+.services .content-services .servicesBx:hover img {
+  animation: showIcon 500ms linear;
+}
+.services .content-services .servicesBx:hover h2 {
+  animation: showCategory 500ms linear;
+}
+
+@keyframes showIcon {
+  from {
+    transform: translateY(-200%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+@keyframes showCategory {
+  from {
+    transform: translateY(-100%);
+    color: black;
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+@keyframes showDescription {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+.main-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.main-title h2 {
+  position: relative;
+  display: block;
+  font-size: 2.3rem;
+}
+.main-title h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 60px;
+  height: 4px;
+  background: #ff9900;
+}
+
+.primary-color {
+  color: #00a8e1;
+}
+
+#packs {
+  padding: 5rem;
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(../img/bg/bg-atrezzo.jpg);
+  background-size: 100%;
+  backdrop-filter: blur(10px);
+  background-attachment: fixed;
+}
+#packs .main-title {
+  color: white;
+  margin-bottom: 4rem;
+}
+#packs .prices-packs {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 7rem;
+}
+#packs .prices-packs .card-prices-packs {
+  padding: 1.7rem;
+  position: relative;
+  min-width: 340px;
+  background: white;
+  overflow: hidden;
+}
+#packs .prices-packs .card-prices-packs ul {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 40px 20px;
+}
+#packs .prices-packs .card-prices-packs ul li {
+  font-weight: 500;
+}
+#packs .prices-packs .card-prices-packs h3 {
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  transition: 0.5s;
+  text-align: center;
+}
+#packs .prices-packs .card-prices-packs h4 {
+  font-family: "Lora", "sans serif";
+  color: rgba(42, 128, 42, 0.76);
+}
+
+#premium-pack {
+  border-top: 1px solid #ff9900;
+  border-left: 1px solid #ff9900;
+  box-shadow: 15px 15px 50px rgba(255, 153, 0, 0.4392156863);
+}
+#premium-pack h3 {
+  color: #ff9900;
+}
+
+#standard-pack {
+  border-top: 1px solid #a38974;
+  border-left: 1px solid #a38974;
+  box-shadow: 15px 15px 50px #a38974;
+}
+#standard-pack h3 {
+  color: #a38974;
+}
+
+#Sobre-Nosotros {
+  margin-top: 3rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+#Sobre-Nosotros .main-title h2 {
+  color: #00a8e1;
+}
+#Sobre-Nosotros .descripcion-parrafo {
+  width: 50%;
+  font-size: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 2.5rem;
+  text-align: center;
+  padding: 1rem;
+}
+#Sobre-Nosotros .descripcion-parrafo .oferta-contacto {
+  margin-top: 3rem;
+  border: 2px dashed;
+  font-weight: 600;
+  line-height: 1.5em;
+  font-size: 0.8em;
+  padding: 1em;
+}
+
+footer {
+  margin-top: 3rem;
+  width: 100%;
+  background-color: #0f0f0f;
+}
+footer div {
+  padding: 0.5rem;
+}
+footer div h3 {
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 2px solid #171616;
+  position: relative;
+  color: white;
+}
+footer div h3::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 55px;
+  height: 2px;
+  background: #ff9900;
+  z-index: 1;
+}
+footer .footer-main-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  background: #171616;
+}
+footer .footer-main-content .nosotros p {
+  font-weight: normal;
+  line-height: 20px;
+}
+footer .footer-main-content .nosotros ul {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 10px;
+  gap: 20px;
+}
+footer .footer-main-content .ubicacion-contacto ul {
+  border: 2px solid white;
+  display: grid;
+  grid-template-columns: repeat(2, 2rem);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.font-material-symbols {
+  font-family: "MaterialSymbolsOutlined";
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=styles.scss.map */
