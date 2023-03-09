@@ -9,7 +9,7 @@ $bg-color-services: #f5f5f5;
 $color-letra-headers: #00bcd4;
 
 //FUENTES
-$font-material-symbols: "MaterialSymbolsOutlined";
+//$font-material-symbols: "MaterialSymbolsOutlined", "Arial";
 $font-main: "Signika", "sans-serif", "Arial";
 
 * {
@@ -146,7 +146,7 @@ BANNER PRINCIPAL
 
   //FONDO DEL BANNER
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
-    url(../img/bg/bg-pareja-atrezzo.jpg);
+    url(../img/bg/bg-pareja-atrezzo.avif);
 
   background-repeat: no-repeat;
   background-size: cover;
@@ -167,7 +167,7 @@ BANNER PRINCIPAL
       font-size: 3rem;
       font-weight: bolder;
       color: white;
-      animation: aparece-titulo 3.5s;
+      animation: aparece-titulo 2.5s;
     }
 
     //DESCRIPCION DEL BANNER
@@ -175,14 +175,17 @@ BANNER PRINCIPAL
       display: block;
       font-size: 2rem;
       color: white;
-      white-space: nowrap;
-      border-right: 3px solid;
-      width: 33.2rem;
-      min-height: 2.5rem;
+      animation: aparece-titulo 5s;
+      // white-space: nowrap;
+      // border-right: 3px solid;
+      
 
-      animation: typing 2s steps(28), blink 0.5s infinite step-end alternate;
+      // width: 33.2rem;
+      // min-height: 2.5rem;
 
-      overflow: hidden;
+      // animation: typing 2s steps(28), blink 0.5s infinite step-end alternate;
+
+      // overflow: hidden;
     }
   }
 }
@@ -360,7 +363,7 @@ CONOCE NUESTROS PACKS
   text-align: center;
   //border-top: 1px solid $bg-color-services;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
-    url(../img/bg/bg-atrezzo.jpg);
+    url(../img/bg/bg-atrezzo.avif);
   background-size: 100%;
   backdrop-filter: blur(10px);
   background-attachment: fixed;
@@ -555,7 +558,6 @@ footer {
 }
 
 .font-material-symbols {
-  font-family: $font-material-symbols;
   font-size: 1.5rem;
   font-weight: normal;
 }

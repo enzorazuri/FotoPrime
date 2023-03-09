@@ -4,36 +4,35 @@
   src: url(fonts/Signika-Bold.ttf);
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Signika";
   src: url(fonts/Signika-Light.ttf);
   font-weight: lighter;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Signika";
   src: url(fonts/Signika-Medium.ttf);
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Signika";
   src: url(fonts/Signika-Regular.ttf);
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Signika";
   src: url(fonts/Signika-SemiBold.ttf);
   font-weight: 900;
   font-style: normal;
-}
-@font-face {
-  font-family: "MaterialSymbolsOutlined";
-  src: url("fonts/MaterialSymbolsOutlined.ttf");
-  font-weight: normal;
-  font-style: normal;
+  font-display: swap;
 }
 * {
   margin: 0;
@@ -143,7 +142,7 @@ BANNER PRINCIPAL
 #main-banner {
   display: grid;
   place-content: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(../img/bg/bg-pareja-atrezzo.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(../img/bg/bg-pareja-atrezzo.avif);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -160,18 +159,13 @@ BANNER PRINCIPAL
   font-size: 3rem;
   font-weight: bolder;
   color: white;
-  animation: aparece-titulo 3.5s;
+  animation: aparece-titulo 2.5s;
 }
 #main-banner .content-banner span {
   display: block;
   font-size: 2rem;
   color: white;
-  white-space: nowrap;
-  border-right: 3px solid;
-  width: 33.2rem;
-  min-height: 2.5rem;
-  animation: typing 2s steps(28), blink 0.5s infinite step-end alternate;
-  overflow: hidden;
+  animation: aparece-titulo 5s;
 }
 
 @keyframes aparece-titulo {
@@ -310,7 +304,7 @@ CONOCE NUESTROS PACKS
 #packs {
   padding: 5rem;
   text-align: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(../img/bg/bg-atrezzo.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(../img/bg/bg-atrezzo.avif);
   background-size: 100%;
   backdrop-filter: blur(10px);
   background-attachment: fixed;
@@ -465,7 +459,6 @@ footer .footer-main-content .ubicacion-contacto ul li {
 }
 
 .font-material-symbols {
-  font-family: "MaterialSymbolsOutlined";
   font-size: 1.5rem;
   font-weight: normal;
 }
