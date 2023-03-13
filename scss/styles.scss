@@ -174,16 +174,6 @@ BANNER PRINCIPAL
       font-size: 2rem;
       color: white;
       animation: aparece-titulo 5s;
-      // white-space: nowrap;
-      // border-right: 3px solid;
-      
-
-      // width: 33.2rem;
-      // min-height: 2.5rem;
-
-      // animation: typing 2s steps(28), blink 0.5s infinite step-end alternate;
-
-      // overflow: hidden;
     }
   }
 }
@@ -233,7 +223,6 @@ NUESTROS SERVICIOS
 */
 
 .services {
-  //border: 5px solid red;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -243,7 +232,6 @@ NUESTROS SERVICIOS
 
   //GRID DE TARJETAS SERVICIOS
   .content-services {
-    //border: 2px solid green;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 120px;
@@ -251,7 +239,6 @@ NUESTROS SERVICIOS
     .servicesBx {
       padding: 40px 20px;
       max-width: 500px;
-      //border: 2px solid blue;
       text-align: center;
       transition: 0.5s;
       background: $bg-color-services;
@@ -263,7 +250,7 @@ NUESTROS SERVICIOS
 
       h2 {
         margin-top: 1.5rem;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         font-weight: bold;
         transition: 0.5s;
         text-transform: uppercase;
@@ -271,12 +258,12 @@ NUESTROS SERVICIOS
       }
 
       p {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         margin: 20px;
         transition: all 60s;
         font-weight: 500;
         text-align: center;
-        line-height: 35px;
+        line-height: 2rem;
       }
 
       &:hover img {
@@ -325,12 +312,12 @@ NUESTROS SERVICIOS
 .main-title {
   width: 100%;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 
   h2 {
     position: relative;
     display: block;
-    font-size: 2.3rem;
+    font-size: 2rem;
 
     &::before {
       content: "";
@@ -359,7 +346,6 @@ CONOCE NUESTROS PACKS
 #packs {
   padding: 5rem;
   text-align: center;
-  //border-top: 1px solid $bg-color-services;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
     url(../img/bg/bg-atrezzo.avif);
   background-size: 100%;
@@ -451,20 +437,23 @@ CONOCE NUESTROS PACKS
     }
   }
 
-  .descripcion-parrafo {
+  .descripcion-parrafo{
     width: 50%;
-    font-size: 1.3rem;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 2.5rem;
-    text-align: center;
-    padding: 1rem;
+
+    .captura-momentos{
+      font-size: 1.3rem;
+      line-height: 2.5rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
 
     .oferta-contacto {
       margin-top: 3rem;
       border: 2px dashed;
       font-weight: 600;
       line-height: 1.5em;
-      font-size: 0.8em;
+      font-size: 1.2rem;
       padding: 1em;
     }
   }
@@ -603,6 +592,15 @@ footer {
 /* Small devices */
 @media only screen and (max-width: 768px) {
   
+
+  #main-banner .content-banner h1 {
+    font-size: 1.8rem;
+  
+  }
+  #main-banner .content-banner span {
+    font-size: 1.3rem;
+  }
+
   footer .footer-main-content {
 
 
@@ -613,18 +611,11 @@ footer {
       1fr;
   }
 
-  #main-banner .content-banner h1 {
-    font-size: 2rem;
-
-  }
 
   #main-banner {
     background-attachment: local;
   }
 
-  #main-banner .content-banner span {
-    font-size: 1.5rem;
-  }
 
   #packs {
     background-attachment: local;
@@ -632,12 +623,21 @@ footer {
   
 }
 
-@media only screen and (max-width: 530px) {
-
+@media only screen and (max-width: 400px) {
 
 html{
-  font-size: 14px;
+  font-size: 13px;
 }
+
+
+#main-banner .content-banner h1 {
+  font-size: 1.5rem;
+
+}
+#main-banner .content-banner span {
+  font-size: 1rem;
+}
+
 
 #packs .main-title h2{
     font-size: 2rem;
@@ -650,5 +650,21 @@ html{
   width: 90%;
 
 }
+
+.services .content-services .servicesBx img {
+  max-width: 100px;
+}
+
+.services .content-services {
+  grid-template-columns: repeat(1, 1fr);
+  gap: 50px;
+}
+
+.services .content-services .servicesBx {
+  padding: 40px 20px;
+  width: 100vw;
+}
+
+
 
 }

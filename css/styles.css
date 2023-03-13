@@ -222,19 +222,19 @@ NUESTROS SERVICIOS
 }
 .services .content-services .servicesBx h2 {
   margin-top: 1.5rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
   transition: 0.5s;
   text-transform: uppercase;
   text-align: center;
 }
 .services .content-services .servicesBx p {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   margin: 20px;
   transition: all 60s;
   font-weight: 500;
   text-align: center;
-  line-height: 35px;
+  line-height: 2rem;
 }
 .services .content-services .servicesBx:hover img {
   animation: showIcon 500ms linear;
@@ -271,12 +271,12 @@ NUESTROS SERVICIOS
 .main-title {
   width: 100%;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .main-title h2 {
   position: relative;
   display: block;
-  font-size: 2.3rem;
+  font-size: 2rem;
 }
 .main-title h2::before {
   content: "";
@@ -375,8 +375,9 @@ CONOCE NUESTROS PACKS
 }
 #Sobre-Nosotros .descripcion-parrafo {
   width: 50%;
+}
+#Sobre-Nosotros .descripcion-parrafo .captura-momentos {
   font-size: 1.3rem;
-  font-family: Arial, Helvetica, sans-serif;
   line-height: 2.5rem;
   text-align: center;
   padding: 1rem;
@@ -386,7 +387,7 @@ CONOCE NUESTROS PACKS
   border: 2px dashed;
   font-weight: 600;
   line-height: 1.5em;
-  font-size: 0.8em;
+  font-size: 1.2rem;
   padding: 1em;
 }
 
@@ -480,25 +481,31 @@ footer .footer-main-content .ubicacion-contacto ul li {
 }
 /* Small devices */
 @media only screen and (max-width: 768px) {
+  #main-banner .content-banner h1 {
+    font-size: 1.8rem;
+  }
+  #main-banner .content-banner span {
+    font-size: 1.3rem;
+  }
   footer .footer-main-content {
     grid-template: "contacto" 1fr "sobre-nosotros" 1fr "logo" 1fr/1fr;
   }
-  #main-banner .content-banner h1 {
-    font-size: 2rem;
-  }
   #main-banner {
     background-attachment: local;
-  }
-  #main-banner .content-banner span {
-    font-size: 1.5rem;
   }
   #packs {
     background-attachment: local;
   }
 }
-@media only screen and (max-width: 530px) {
+@media only screen and (max-width: 400px) {
   html {
-    font-size: 14px;
+    font-size: 13px;
+  }
+  #main-banner .content-banner h1 {
+    font-size: 1.5rem;
+  }
+  #main-banner .content-banner span {
+    font-size: 1rem;
   }
   #packs .main-title h2 {
     font-size: 2rem;
@@ -508,6 +515,17 @@ footer .footer-main-content .ubicacion-contacto ul li {
   }
   #Sobre-Nosotros .descripcion-parrafo {
     width: 90%;
+  }
+  .services .content-services .servicesBx img {
+    max-width: 100px;
+  }
+  .services .content-services {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 50px;
+  }
+  .services .content-services .servicesBx {
+    padding: 40px 20px;
+    width: 100vw;
   }
 }
 
