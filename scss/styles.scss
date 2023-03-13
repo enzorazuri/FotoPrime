@@ -543,9 +543,9 @@ footer {
 
       ul {
         //border: 2px solid white;
-        display: grid;
-        grid-template-columns: repeat(2, 2rem);
-        grid-template-rows: repeat(3, 1fr);
+        display: flex;
+        flex-flow: column wrap;
+        gap: 20px;
 
         li {
           font-size: 1.2rem;
@@ -607,9 +607,10 @@ footer {
 
 
     grid-template:
-      "contacto sobre-nosotros" 1fr
-      "logo sobre-nosotros" 1fr/
-      1fr 1fr;
+      "contacto" 1fr
+      "sobre-nosotros" 1fr
+      "logo" 1fr/
+      1fr;
   }
 
   #main-banner .content-banner h1 {
@@ -635,7 +636,7 @@ footer {
 
 
 html{
-  font-size: 12px;
+  font-size: 14px;
 }
 
 #packs .main-title h2{

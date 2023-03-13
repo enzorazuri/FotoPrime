@@ -447,9 +447,9 @@ footer .footer-main-content .ubicacion-contacto {
   grid-area: contacto;
 }
 footer .footer-main-content .ubicacion-contacto ul {
-  display: grid;
-  grid-template-columns: repeat(2, 2rem);
-  grid-template-rows: repeat(3, 1fr);
+  display: flex;
+  flex-flow: column wrap;
+  gap: 20px;
 }
 footer .footer-main-content .ubicacion-contacto ul li {
   font-size: 1.2rem;
@@ -481,7 +481,7 @@ footer .footer-main-content .ubicacion-contacto ul li {
 /* Small devices */
 @media only screen and (max-width: 768px) {
   footer .footer-main-content {
-    grid-template: "contacto sobre-nosotros" 1fr "logo sobre-nosotros" 1fr/1fr 1fr;
+    grid-template: "contacto" 1fr "sobre-nosotros" 1fr "logo" 1fr/1fr;
   }
   #main-banner .content-banner h1 {
     font-size: 2rem;
@@ -498,7 +498,7 @@ footer .footer-main-content .ubicacion-contacto ul li {
 }
 @media only screen and (max-width: 530px) {
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
   #packs .main-title h2 {
     font-size: 2rem;
