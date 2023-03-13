@@ -54,9 +54,6 @@ body {
   font-family: "Signika", "sans-serif", "Arial";
   font-weight: bold;
 }
-body.main-grid {
-  display: grid;
-}
 
 @keyframes background-move {
   0% {
@@ -500,6 +497,9 @@ footer .footer-main-content .ubicacion-contacto ul li {
   }
 }
 @media only screen and (max-width: 530px) {
+  html {
+    font-size: 12px;
+  }
   #packs .main-title h2 {
     font-size: 2rem;
   }
