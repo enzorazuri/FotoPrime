@@ -9,7 +9,7 @@ $bg-color-services: #f5f5f5;
 $color-letra-headers: #00bcd4;
 
 //FUENTES
-$font-main: "Signika", "sans-serif", "Arial";
+$font-main: "Signika";
 
 * {
   margin: 0;
@@ -367,9 +367,8 @@ CONOCE NUESTROS PACKS
     gap: 7rem;
 
     .card-prices-packs {
-      padding: 1.7rem;
+      padding: 1.3rem;
       position: relative;
-      min-width: 340px;
       background: white;
       overflow: hidden;
 
@@ -448,13 +447,23 @@ CONOCE NUESTROS PACKS
     }
 
 
+
+  }
+
+  .sticker-contactanos{
+
+
     .oferta-contacto {
       margin-top: 3rem;
       border: 2px dashed;
       font-weight: 600;
       line-height: 1.5em;
-      font-size: 1.2rem;
+      font-size: 1rem;
       padding: 1em;
+      text-align: center;
+      width: auto;
+      max-width: 500px;
+
     }
   }
 }
@@ -527,11 +536,9 @@ footer {
     }
 
     .ubicacion-contacto {
-      // border: 2px solid orange;
       grid-area: contacto;
 
       ul {
-        //border: 2px solid white;
         display: flex;
         flex-flow: column wrap;
         gap: 20px;
@@ -601,6 +608,8 @@ footer {
     font-size: 1.3rem;
   }
 
+
+
   footer .footer-main-content {
 
 
@@ -623,12 +632,17 @@ footer {
   
 }
 
-@media only screen and (max-width: 400px) {
+
+
+@media only screen and (max-width: 520px) {
 
 html{
   font-size: 13px;
 }
 
+.header-principal .logo {
+  max-width: 250px;
+}
 
 #main-banner .content-banner h1 {
   font-size: 1.5rem;
@@ -642,6 +656,8 @@ html{
 #packs .main-title h2{
     font-size: 2rem;
 }
+
+
 #Sobre-Nosotros .main-title h2 {
   font-size: 2rem;
 }
@@ -649,6 +665,10 @@ html{
 #Sobre-Nosotros .descripcion-parrafo {
   width: 90%;
 
+}
+
+#Sobre-Nosotros .sticker-contactanos .oferta-contacto {
+  max-width: 300px;
 }
 
 .services .content-services .servicesBx img {

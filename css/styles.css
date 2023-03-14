@@ -1,38 +1,8 @@
-/*Fuentes*/
 @font-face {
   font-family: "Signika";
-  src: url(fonts/Signika-Bold.ttf);
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Signika";
-  src: url(fonts/Signika-Light.ttf);
-  font-weight: lighter;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Signika";
-  src: url(fonts/Signika-Medium.ttf);
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Signika";
-  src: url(fonts/Signika-Regular.ttf);
+  src: local("Signika"), local("Signika Regular"), url(fonts/Signika-Regular.woff) format("woff"), url(fonts/Signika-Regular.ttf) format("truetype"), local("sans-serif");
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Signika";
-  src: url(fonts/Signika-SemiBold.ttf);
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
 }
 * {
   margin: 0;
@@ -51,7 +21,7 @@ a:active {
 }
 
 body {
-  font-family: "Signika", "sans-serif", "Arial";
+  font-family: "Signika";
   font-weight: bold;
 }
 
@@ -318,9 +288,8 @@ CONOCE NUESTROS PACKS
   gap: 7rem;
 }
 #packs .prices-packs .card-prices-packs {
-  padding: 1.7rem;
+  padding: 1.3rem;
   position: relative;
-  min-width: 340px;
   background: white;
   overflow: hidden;
 }
@@ -382,13 +351,16 @@ CONOCE NUESTROS PACKS
   text-align: center;
   padding: 1rem;
 }
-#Sobre-Nosotros .descripcion-parrafo .oferta-contacto {
+#Sobre-Nosotros .sticker-contactanos .oferta-contacto {
   margin-top: 3rem;
   border: 2px dashed;
   font-weight: 600;
   line-height: 1.5em;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 1em;
+  text-align: center;
+  width: auto;
+  max-width: 500px;
 }
 
 footer {
@@ -497,9 +469,12 @@ footer .footer-main-content .ubicacion-contacto ul li {
     background-attachment: local;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 520px) {
   html {
     font-size: 13px;
+  }
+  .header-principal .logo {
+    max-width: 250px;
   }
   #main-banner .content-banner h1 {
     font-size: 1.5rem;
@@ -515,6 +490,9 @@ footer .footer-main-content .ubicacion-contacto ul li {
   }
   #Sobre-Nosotros .descripcion-parrafo {
     width: 90%;
+  }
+  #Sobre-Nosotros .sticker-contactanos .oferta-contacto {
+    max-width: 300px;
   }
   .services .content-services .servicesBx img {
     max-width: 100px;
